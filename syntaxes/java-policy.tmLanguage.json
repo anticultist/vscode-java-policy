@@ -1,0 +1,81 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Java Policy",
+	"patterns": [
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#permission"
+		}
+	],
+	"repository": {
+		"strings": {
+			"name": "string.quoted.double.java-policy",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.java-policy",
+					"match": "\\\\."
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.java-policy",
+				"match": "\\b(codeBase|grant|keystore|principal|signedBy)\\b"
+			}]
+		},
+		"comment": {
+			"name": "comment.line.double-slash.java-policy",
+			"begin": "//",
+			"end": "$"
+		},
+		"number": {
+			"name": "constant.numeric.java-policy",
+			"match": "\\b([0-9]+)\\b"
+		},
+		"class": {
+			"match": "\\b([a-zA-Z])+\\b",
+			"captures": {
+				"0": {"name": "support.class.java-policy"}
+			}
+		},
+		"permission": {
+			"begin": "\\b(permission)\\b",
+			"beginCaptures": {
+				"1": { "name": "support.function.builtin.java-policy" }
+			},
+			"end": ";",
+			"endCaptures": {
+				"0": { "name": "punctuation.terminator.statement.java-policy" }
+			},
+			"patterns": [
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#number"
+				},
+				{
+					"include": "#class"
+				},
+				{
+					"name": "keyword.operator.arithmetic.java-policy",
+					"match": "\\+|\\-|\\*|\\*\\*|/|//|%|<<|>>|&|\\||\\^|~"
+				}
+			]
+		}
+	},
+	"scopeName": "source.java-policy"
+}

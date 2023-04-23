@@ -1,0 +1,26 @@
+{
+  "name": "java-policy",
+  "displayName": "Java Policy",
+  "description": "Syntax highlighting for Java policy files.",
+  "publisher": "anticultist",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "java-policy",
+      "aliases": ["Java Policy", "java-policy"],
+      "extensions": [".policy"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "java-policy",
+      "scopeName": "source.java-policy",
+      "path": "./syntaxes/java-policy.tmLanguage.json"
+    }]
+  }
+}

@@ -24,6 +24,26 @@
 				{
 					"name": "constant.character.escape.java-policy",
 					"match": "\\\\."
+				},
+				{
+					"include": "#template_expression"
+				}
+			]
+		},
+		"template_expression": {
+			"name": "meta.template.expression.java-policy",
+			"begin": "(\\$\\{)",
+			"beginCaptures": {
+				"0": { "name": "punctuation.definition.template-expression.begin.java-policy" }
+			},
+			"end": "(\\})",
+			"endCaptures": {
+				"0": { "name": "punctuation.definition.template-expression.end.java-policy" }
+			},
+			"patterns": [
+				{
+					"name": "meta.definition.variable.name",
+					"match": "[a-zA-Z]+[0-9]*"
 				}
 			]
 		},

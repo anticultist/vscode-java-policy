@@ -36,7 +36,13 @@
 		"comment": {
 			"name": "comment.line.double-slash.java-policy",
 			"begin": "//",
-			"end": "$"
+			"end": "$",
+			"patterns": [
+				{
+					"name": "keyword.codetag.notation.java-policy",
+					"match": "\\b(BUG|FIXME|HACK|NOTE|TODO|XXX|XXXTODO)\\b"
+				}
+			]
 		},
 		"number": {
 			"name": "constant.numeric.java-policy",

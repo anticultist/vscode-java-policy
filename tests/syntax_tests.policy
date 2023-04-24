@@ -2,3 +2,9 @@
 
 // foo
 // <- source.java-policy comment.line.double-slash.java-policy
+
+grant signedBy "me" {
+// <----- keyword.control.java-policy
+//    ^^^^^^^^ keyword.control.java-policy
+//             ^^^^ string.quoted.double.java-policy
+};

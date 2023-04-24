@@ -11,16 +11,31 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "java-policy",
-      "aliases": ["Java Policy", "java-policy"],
-      "extensions": [".policy"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "java-policy",
-      "scopeName": "source.java-policy",
-      "path": "./syntaxes/java-policy.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "java-policy",
+        "aliases": [
+          "Java Policy",
+          "java-policy"
+        ],
+        "extensions": [
+          ".policy"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "java-policy",
+        "scopeName": "source.java-policy",
+        "path": "./syntaxes/java-policy.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "vscode-tmgrammar-test -c source.java-policy -g syntaxes/java-policy.tmLanguage.json \"tests/**/*.policy\""
+  },
+  "devDependencies": {
+    "vscode-tmgrammar-test": "^0.1.1"
   }
 }

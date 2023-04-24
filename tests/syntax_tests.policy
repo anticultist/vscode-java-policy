@@ -1,0 +1,4 @@
+// SYNTAX TEST "source.java-policy" "Java policy test cases"
+
+// foo
+// <- source.java-policy comment.line.double-slash.java-policy

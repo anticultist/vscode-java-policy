@@ -4,6 +4,7 @@
   "description": "Syntax highlighting for Java policy files.",
   "publisher": "anticultist",
   "license": "ISC",
+  "icon": "media/icon.png",
   "version": "0.0.1",
 	"repository": {
 		"type": "git",

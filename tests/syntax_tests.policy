@@ -3,8 +3,36 @@
 // foo
 // <- source.java-policy comment.line.double-slash.java-policy
 
+keystore "file:/C:/mykeystore";
+// <-------- keyword.control.java-policy
+//       ^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.java-policy
+//                            ^ punctuation.terminator.statement.java-policy
+keystorePasswordURL "file:/C:/keystore.password";
+// <------------------- keyword.control.java-policy
+//                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.java-policy
+//                                              ^ punctuation.terminator.statement.java-policy
+
+grant {
+// <----- keyword.control.java-policy
+//    ^ punctuation.section.group.begin.java-policy
+};
+// <- punctuation.section.group.end.java-policy
+// <~- punctuation.terminator.statement.java-policy
+
 grant signedBy "me" {
 // <----- keyword.control.java-policy
 //    ^^^^^^^^ keyword.control.java-policy
 //             ^^^^ string.quoted.double.java-policy
+//                  ^ punctuation.section.group.begin.java-policy
+};
+// <- punctuation.section.group.end.java-policy
+
+grant signedBy "me", codeBase "url",
+    principal lorem.ipsum "cn=Bob"
+{
+};
+
+grant principal "bob" {
+  permission java.io.FilePermission "C:\\foo.txt", "read";
+  permission java.io.FilePermission "${user.home}", "read,write";
 };

@@ -50,7 +50,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.java-policy",
-				"match": "\\b(codeBase|grant|keystore|principal|signedBy)\\b"
+				"match": "\\b(codeBase|grant|keystore|keystorePasswordURL|principal|signedBy)\\b"
 			}]
 		},
 		"comment": {

@@ -28,11 +28,25 @@ grant signedBy "me" {
 // <- punctuation.section.group.end.java-policy
 
 grant signedBy "me", codeBase "url",
+//                 ^ punctuation.separator.delimiter.java-policy
     principal lorem.ipsum "cn=Bob"
 {
 };
 
 grant principal "bob" {
   permission java.io.FilePermission "C:\\foo.txt", "read";
+//           ^^^^ support.class.java-policy
+//               ^ punctuation.separator.java-policy
+//                ^^ support.class.java-policy
+//                  ^ punctuation.separator.java-policy
+//                   ^^^^^^^^^^^^^^ support.class.java-policy
+//                                     ^^ constant.character.escape.java-policy
+//                                               ^ punctuation.separator.delimiter.java-policy
+//                                                       ^ punctuation.terminator.java-policy
   permission java.io.FilePermission "${user.home}", "read,write";
+//                                   ^^ punctuation.definition.template-expression.begin.java-policy
+//                                     ^^^^ meta.definition.variable.name.java-policy
+//                                         ^ punctuation.accessor.java-policy
+//                                          ^^^^ meta.definition.variable.name.java-policy
+//                                              ^ punctuation.definition.template-expression.end.java-policy
 };

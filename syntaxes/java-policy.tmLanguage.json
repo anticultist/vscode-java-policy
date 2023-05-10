@@ -42,7 +42,7 @@
 			},
 			"patterns": [
 				{
-					"name": "meta.definition.variable.name",
+					"name": "meta.definition.variable.name.java-policy",
 					"match": "[a-zA-Z]+[0-9]*"
 				}
 			]

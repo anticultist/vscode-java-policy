@@ -30,6 +30,9 @@ grant signedBy "me" {
 grant signedBy "me", codeBase "url",
 //                 ^ punctuation.separator.delimiter.java-policy
     principal lorem.ipsum "cn=Bob"
+//            ^^^^^ support.class.java-policy
+//                 ^ punctuation.separator.java-policy
+//                  ^^^^^ support.class.java-policy
 {
 };
 

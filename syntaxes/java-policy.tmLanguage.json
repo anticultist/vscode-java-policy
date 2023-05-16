@@ -54,6 +54,10 @@
 				{
 					"name": "meta.definition.variable.name.java-policy",
 					"match": "[a-zA-Z]+[0-9]*"
+				},
+				{
+					"name": "punctuation.accessor.java-policy",
+					"match": "\\."
 				}
 			]
 		},
@@ -132,6 +136,10 @@
 				},
 				{
 					"include": "#comma"
+				},
+				{
+					"name": "punctuation.separator.java-policy",
+					"match": "\\."
 				}
 			]
 		},
@@ -175,6 +183,10 @@
 				{
 					"name": "keyword.operator.arithmetic.java-policy",
 					"match": "\\+|\\-|\\*|\\*\\*|/|//|%|<<|>>|&|\\||\\^|~"
+				},
+				{
+					"name": "punctuation.separator.java-policy",
+					"match": "\\."
 				}
 			]
 		}

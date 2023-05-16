@@ -3,20 +3,30 @@
 	"name": "Java Policy",
 	"patterns": [
 		{
-			"include": "#strings"
+			"include": "#prototype"
 		},
 		{
-			"include": "#keywords"
+			"include": "#global_property"
 		},
 		{
-			"include": "#comment"
-		},
-		{
-			"include": "#permission"
+			"include": "#grant"
 		}
 	],
 	"repository": {
-		"strings": {
+		"prototype": {
+			"patterns": [
+				{
+					"include": "#comment"
+				},
+				{
+					"include": "#string"
+				},
+				{
+					"include": "#number"
+				}
+			]
+		},
+		"string": {
 			"name": "string.quoted.double.java-policy",
 			"begin": "\"",
 			"end": "\"",
@@ -47,12 +57,6 @@
 				}
 			]
 		},
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.java-policy",
-				"match": "\\b(codeBase|grant|keystore|keystorePasswordURL|principal|signedBy)\\b"
-			}]
-		},
 		"comment": {
 			"name": "comment.line.double-slash.java-policy",
 			"begin": "//",
@@ -74,6 +78,81 @@
 				"0": {"name": "support.class.java-policy"}
 			}
 		},
+		"comma": {
+			"name": "punctuation.separator.delimiter.java-policy",
+			"match": ","
+		},
+		"global_property": {
+			"begin": "\\b(keystore|keystorePasswordURL)\\b",
+			"beginCaptures": {
+				"1": { "name": "keyword.control.java-policy" }
+			},
+			"end": ";",
+			"endCaptures": {
+				"0": { "name": "punctuation.terminator.statement.java-policy" }
+			},
+			"patterns": [
+				{
+					"include": "#prototype"
+				}
+			]
+		},
+		"grant": {
+			"begin": "\\b(grant)\\b",
+			"beginCaptures": {
+				"1": { "name": "keyword.control.java-policy" }
+			},
+			"end": ";",
+			"endCaptures": {
+				"0": { "name": "punctuation.terminator.statement.java-policy" }
+			},
+			"patterns": [
+				{
+					"include": "#prototype"
+				},
+				{
+					"include": "#grant_parameter"
+				},
+				{
+					"include": "#grant_body"
+				}
+			]
+		},
+		"grant_parameter": {
+			"patterns": [
+				{
+					"include": "#prototype"
+				},
+				{
+					"name": "keyword.control.java-policy",
+					"match": "\\b(codeBase|principal|signedBy)\\b"
+				},
+				{
+					"include": "#class"
+				},
+				{
+					"include": "#comma"
+				}
+			]
+		},
+		"grant_body": {
+			"begin": "(\\{)",
+			"beginCaptures": {
+				"1": { "name": "punctuation.section.group.begin.java-policy" }
+			},
+			"end": "(\\})",
+			"endCaptures": {
+				"0": { "name": "punctuation.section.group.end.java-policy" }
+			},
+			"patterns": [
+				{
+					"include": "#prototype"
+				},
+				{
+					"include": "#permission"
+				}
+			]
+		},
 		"permission": {
 			"begin": "\\b(permission)\\b",
 			"beginCaptures": {
@@ -85,16 +164,13 @@
 			},
 			"patterns": [
 				{
-					"include": "#strings"
-				},
-				{
-					"include": "#keywords"
-				},
-				{
-					"include": "#number"
+					"include": "#prototype"
 				},
 				{
 					"include": "#class"
+				},
+				{
+					"include": "#comma"
 				},
 				{
 					"name": "keyword.operator.arithmetic.java-policy",

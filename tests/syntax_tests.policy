@@ -42,7 +42,7 @@ grant principal "bob" {
 //                   ^^^^^^^^^^^^^^ support.class.java-policy
 //                                     ^^ constant.character.escape.java-policy
 //                                               ^ punctuation.separator.delimiter.java-policy
-//                                                       ^ punctuation.terminator.java-policy
+//                                                       ^ punctuation.terminator.statement.java-policy
   permission java.io.FilePermission "${user.home}", "read,write";
 //                                   ^^ punctuation.definition.template-expression.begin.java-policy
 //                                     ^^^^ meta.definition.variable.name.java-policy

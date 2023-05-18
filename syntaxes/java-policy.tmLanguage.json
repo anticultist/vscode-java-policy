@@ -36,8 +36,11 @@
 					"match": "\\\\."
 				},
 				{
+					"include": "#wildcard"
+				},
+				{
 					"include": "#template_expression"
-				}
+				}				
 			]
 		},
 		"template_expression": {
@@ -112,6 +115,10 @@
 		"comma": {
 			"name": "punctuation.separator.delimiter.java-policy",
 			"match": ","
+		},
+		"wildcard": {
+			"name": "variable.language.wildcard.java-policy",
+			"match": "\\*"
 		},
 		"global_property": {
 			"begin": "\\b(keystore|keystorePasswordURL)\\b",
@@ -215,8 +222,7 @@
 					"include": "#comma"
 				},
 				{
-					"name": "variable.language.wildcard.java-policy",
-					"match": "\\*"
+					"include": "#wildcard"
 				},
 				{
 					"name": "keyword.operator.arithmetic.java-policy",

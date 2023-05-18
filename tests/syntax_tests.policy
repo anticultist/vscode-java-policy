@@ -63,6 +63,7 @@ grant principal "bob" {
 //                                          ^^^^ meta.definition.variable.name.java-policy
 //                                              ^ punctuation.definition.template-expression.end.java-policy
   permission HighScorePermission "*", signedBy "me";
+//                                ^ variable.language.wildcard.java-policy
 //                                    ^^^^^^^^ keyword.other.java-policy
   permission BarPermission "${{self}}";
 //                          ^^^^^^^^^ meta.template.expression.java-policy

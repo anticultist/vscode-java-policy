@@ -12,7 +12,7 @@
             "args": [
                 "--disable-extensions",
                 "--extensionDevelopmentPath=${workspaceFolder}",
-                "--folder-uri=${workspaceFolder}/tests/"
+                "--folder-uri=${workspaceFolder}/examples/"
             ]
         }
     ]

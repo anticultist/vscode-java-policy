@@ -4,24 +4,32 @@
 // <- source.java-policy comment.line.double-slash.java-policy
 
 keystore "file:/C:/mykeystore";
-// <-------- keyword.control.java-policy
+// <-------- keyword.other.java-policy
 //       ^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.java-policy
 //                            ^ punctuation.terminator.statement.java-policy
+
+keystore "url", "type", "provider";
+//       ^^^^^ string.quoted.double.java-policy
+//            ^ punctuation.separator.delimiter.java-policy
+//              ^^^^^^ string.quoted.double.java-policy
+//                    ^ punctuation.separator.delimiter.java-policy
+//                      ^^^^^^^^^^ string.quoted.double.java-policy
+
 keystorePasswordURL "file:/C:/keystore.password";
-// <------------------- keyword.control.java-policy
+// <------------------- keyword.other.java-policy
 //                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.java-policy
 //                                              ^ punctuation.terminator.statement.java-policy
 
 grant {
-// <----- keyword.control.java-policy
+// <----- keyword.other.java-policy
 //    ^ punctuation.section.group.begin.java-policy
 };
 // <- punctuation.section.group.end.java-policy
 // <~- punctuation.terminator.statement.java-policy
 
 grant signedBy "me" {
-// <----- keyword.control.java-policy
-//    ^^^^^^^^ keyword.control.java-policy
+// <----- keyword.other.java-policy
+//    ^^^^^^^^ keyword.other.java-policy
 //             ^^^^ string.quoted.double.java-policy
 //                  ^ punctuation.section.group.begin.java-policy
 };
@@ -37,6 +45,7 @@ grant signedBy "me", codeBase "url",
 };
 
 grant principal "bob" {
+//    ^^^^^^^^^ keyword.other.java-policy
   permission java.io.FilePermission "C:\\foo.txt", "read";
 //           ^^^^ support.class.java-policy
 //               ^ punctuation.separator.java-policy
@@ -47,9 +56,22 @@ grant principal "bob" {
 //                                               ^ punctuation.separator.delimiter.java-policy
 //                                                       ^ punctuation.terminator.statement.java-policy
   permission java.io.FilePermission "${user.home}", "read,write";
+//                                   ^^^^^^^^^^^^ meta.template.expression.java-policy
 //                                   ^^ punctuation.definition.template-expression.begin.java-policy
 //                                     ^^^^ meta.definition.variable.name.java-policy
 //                                         ^ punctuation.accessor.java-policy
 //                                          ^^^^ meta.definition.variable.name.java-policy
 //                                              ^ punctuation.definition.template-expression.end.java-policy
+  permission HighScorePermission "*", signedBy "me";
+//                                    ^^^^^^^^ keyword.other.java-policy
+  permission BarPermission "${{self}}";
+//                          ^^^^^^^^^ meta.template.expression.java-policy
+  permission BarPermission "${{alias:foo_bar}}";
+//                                  ^ punctuation.separator.key-value.java-policy
+//                                   ^^^^^^^ meta.definition.variable.name.java-policy
+
+  permission javax.crypto.CryptoPermission "DES", 64;
+//                                                ^^ constant.numeric.java-policy
+  permission javax.crypto.CryptoPermission *, "KeyRecovery";
+//                                         ^ variable.language.wildcard.java-policy
 };

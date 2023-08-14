@@ -5,3 +5,8 @@ Syntax highlighting for [Java policy file syntax](https://docs.oracle.com/javase
 ## Screenshot
 
 ![Screenshot](./media/screenshot.png)
+
+## Call for action
+
+Do not hesitate to [create an issue](https://github.com/anticultist/vscode-java-policy/issues/new) for unrecognized code.
+But make sure to provide a minimal code example and a brief description.

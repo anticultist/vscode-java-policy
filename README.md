@@ -1,6 +1,6 @@
 # README
 
-Syntax highlighting for [Java policy files](https://docs.oracle.com/javase/7/docs/technotes/guides/security/PolicyFiles.html) used by the [deprecated Security Manager](https://openjdk.org/jeps/411).
+Syntax highlighting for [Java policy files](https://docs.oracle.com/javase/7/docs/technotes/guides/security/PolicyFiles.html) used by the deprecated Security Manager ([JEP 411](https://openjdk.org/jeps/411)).
 
 ## Screenshot
 

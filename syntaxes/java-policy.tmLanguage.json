@@ -201,7 +201,7 @@
 		"permission": {
 			"begin": "\\b(permission)\\b",
 			"beginCaptures": {
-				"1": { "name": "support.function.builtin.java-policy" }
+				"1": { "name": "support.function.builtin.java-policy keyword.other.java" }
 			},
 			"end": ";",
 			"endCaptures": {

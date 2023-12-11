@@ -1,0 +1,22 @@
+{
+	"scopeName": "markdown.java-policy.codeblock",
+	"fileTypes": [],
+	"injectionSelector": "L:markup.fenced_code.block.markdown",
+	"patterns": [
+		{
+			"include": "#java-policy-code-block"
+		}
+	],
+	"repository": {
+		"java-policy-code-block": {
+			"begin": "\\b(java-policy)\\b",
+			"end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)",
+			"contentName": "meta.embedded.block.java-policy",
+			"patterns": [
+				{
+					"include": "source.java-policy"
+				}
+			]
+		}
+	}
+}

@@ -35,6 +35,16 @@
         "language": "java-policy",
         "scopeName": "source.java-policy",
         "path": "./syntaxes/java-policy.tmLanguage.json"
+      },
+      {
+        "scopeName": "markdown.java-policy.codeblock",
+        "path": "./syntaxes/java-policy-markdown-injection.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.java-policy": "java-policy"
+        }
       }
     ]
   },

@@ -12,4 +12,4 @@ Share your feedback as a [GitHub issue](https://github.com/anticultist/vscode-ja
 
 ## Support
 
-[Buy me a coffee](https://ko-fi.com/anticultist) to support the progress of this expansion.
+[Buy me a coffee](https://ko-fi.com/anticultist) to support the progress of this extension.

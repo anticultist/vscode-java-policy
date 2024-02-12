@@ -4,6 +4,9 @@
   "description": "Syntax highlighting for Java policy files.",
   "publisher": "anticultist",
   "license": "ISC",
+  "sponsor": {
+    "url": "https://ko-fi.com/anticultist"
+  },
   "icon": "media/icon.png",
   "version": "0.1.0",
 	"repository": {

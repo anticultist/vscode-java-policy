@@ -1,17 +1,16 @@
 # Change Log
 
-All notable changes to the "java-policy" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
+## 0.2.0
 
 ### Added
+
+- syntax highlighting within markdown code blocks which are marked as `java-policy`
 
 ### Fixed
 
 - Improve highlighting of `permission` keyword on light theme
+- Improve highlighting of template literals for some themes
 
-## 0.1
+## 0.1.0
 
 - Initial release

@@ -2,8 +2,10 @@
 .vscode/**
 .vscode-test/**
 examples/**
-media/icon.svg
+media/**
 tests/**
+
+!media/icon.png
 
 .gitignore
 .markdownlint.json

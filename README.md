@@ -4,7 +4,9 @@ Syntax highlighting for [Java policy files](https://docs.oracle.com/javase/7/doc
 
 ## Screenshot
 
-![Screenshot](./media/screenshot.png)
+![Example](./media/screenshot.png)
+
+![Markdown Injection](./media/markdown_injection.png)
 
 ## Feedback
 

@@ -44,7 +44,7 @@
 			]
 		},
 		"template_expression": {
-			"name": "meta.template.expression.java-policy",
+			"name": "meta.template.expression.java-policy meta.embedded.line.java-policy",
 			"begin": "(\\$\\{)",
 			"beginCaptures": {
 				"0": { "name": "punctuation.definition.template-expression.begin.java-policy" }
@@ -62,7 +62,7 @@
 		"template_expression_body": {
 			"patterns": [
 				{
-					"name": "meta.definition.variable.name.java-policy",
+					"name": "meta.definition.variable.name.java-policy variable.other.java-policy",
 					"match": "[a-zA-Z_][a-zA-Z0-9_]*"
 				},
 				{
@@ -117,7 +117,7 @@
 			"match": ","
 		},
 		"wildcard": {
-			"name": "variable.language.wildcard.java-policy",
+			"name": "variable.language.wildcard.java-policy meta.embedded.line.java-policy",
 			"match": "\\*"
 		},
 		"global_property": {

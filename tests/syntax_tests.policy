@@ -70,6 +70,8 @@ grant principal "bob" {
   permission BarPermission "${{alias:foo_bar}}";
 //                                  ^ punctuation.separator.key-value.java-policy
 //                                   ^^^^^^^ meta.definition.variable.name.java-policy
+  permission java.io.FilePermission  "${foo.${bar}}", "read";
+//                                          ^^^^^^ error.java-policy
 
   permission javax.crypto.CryptoPermission "DES", 64;
 //                                                ^^ constant.numeric.java-policy

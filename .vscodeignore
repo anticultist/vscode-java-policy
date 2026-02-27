@@ -10,3 +10,4 @@ tests/**
 .gitignore
 .markdownlint.json
 vsc-extension-quickstart.md
+response.md
